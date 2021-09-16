@@ -1,2 +1,0 @@
-# tailwindtest.github.io
-tailwindtest
