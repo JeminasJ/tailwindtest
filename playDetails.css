@@ -1,0 +1,368 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 弹幕按钮 */
+.danmu__btn {
+  @apply bg-red-500 ring-2 ring-opacity-50 ring-red-500;
+}
+/* 滚动条 */
+#scrollbar {
+  @apply overflow-x-hidden overflow-y-scroll;
+  height: 545px;
+}
+#scrollbar::-webkit-scrollbar {
+  @apply w-2;
+}
+#scrollbar::-webkit-scrollbar-track-piece {
+  @apply bg-transparent;
+}
+#scrollbar::-webkit-scrollbar-thumb {
+  @apply bg-gray-700 rounded;
+}
+/* 页码tab */
+#page1-30:checked ~ .pageTab__1-30 {
+  @apply flex;
+}
+#page1-30:checked ~ .page__nav label[for="page1-30"] span {
+  @apply text-red-500;
+}
+#page31-60:checked ~ .pageTab__31-60 {
+  @apply flex;
+}
+#page31-60:checked ~ .page__nav label[for="page31-60"] span {
+  @apply text-red-500;
+}
+#page61-67:checked ~ .pageTab__61-67 {
+  @apply flex;
+}
+#page61-67:checked ~ .page__nav label[for="page61-67"] span {
+  @apply text-red-500;
+}
+/* 页码列表 */
+.page__num__li {
+  @apply py-3;
+}
+.page__num__a {
+  @apply px-3 py-1 rounded-full;
+}
+.page__nav ~ ul li a:hover {
+  @apply text-red-500 bg-gray-900;
+}
+/* 精彩周边 */
+.perfect__a {
+  @apply flex justify-between py-2;
+}
+.perfect__a:hover {
+  @apply text-red-500;
+}
+.perfect__img {
+  @apply w-5/12 mx-2;
+}
+/* 简介、分集剧情tab */
+#info__detail:checked ~ .info__tab__detail {
+  @apply block;
+}
+#info__detail:checked ~ .info__nav label[for="info__detail"] span {
+  @apply border-b-4 border-red-500;
+}
+#info__story:checked ~ .info__tab__story {
+  @apply block;
+}
+#info__story:checked ~ .info__nav label[for="info__story"] span {
+  @apply border-b-4 border-red-500;
+}
+.info__tab__detail a:hover {
+  @apply text-red-500;
+}
+/* 段落多余两行省略 */
+.p__hidden p {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+/* 文字透明渐变 */
+.gradient__transparent {
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.5),
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 1)
+  );
+}
+/* 180度旋转 */
+.btn__rotate180 {
+  transform: rotate(180deg);
+}
+/* 首行缩进 */
+.info__tab__story p {
+  text-indent: 2rem;
+}
+.info__tab__story h4 {
+  @apply text-lg;
+}
+/* 表情包 */
+.emojiList li {
+  @apply w-32 h-40 transition transform bg-white rounded hover:scale-150 hover:translate-y-7 hover:shadow-xl;
+}
+.emojiList li:hover > div {
+  @apply flex;
+}
+.emojiList li img {
+  @apply rounded;
+}
+.emojiList li > div {
+  @apply flex-col -mt-2.5 transform scale-50 hidden;
+}
+.emojiList li > div > div {
+  @apply flex items-center justify-center space-x-1.5 pt-1;
+}
+/* 表清包--左右分页 */
+.emojiList label {
+  @apply absolute text-gray-400 transition opacity-0 cursor-pointer top-9 hover:opacity-100;
+}
+.emojiList label:first-child {
+  @apply -left-5;
+}
+.emojiList label:last-child {
+  @apply -right-5;
+}
+#emojiList__tab1:checked ~ .emoji__tab1 {
+  @apply block;
+}
+#emojiList__tab2:checked ~ .emoji__tab2 {
+  @apply block;
+}
+#emojiList__tab3:checked ~ .emoji__tab3 {
+  @apply block;
+}
+/* 主演 */
+/* 主演--头像分页 */
+.actorList--page {
+  @apply relative hidden;
+}
+.actorList--page > ul {
+  @apply flex justify-around;
+}
+.actorList--page > ul > li > label {
+  @apply flex items-center pb-2 border-b-4 border-red-500 border-opacity-0 opacity-50 cursor-pointer hover:opacity-100 hover:border-opacity-100;
+}
+.actorList--page > ul > li > label > img {
+  @apply w-16 rounded-full;
+}
+.actorList--page > ul > li > label > div {
+  @apply flex flex-col px-2;
+}
+.actorList--page > ul > li div > span:last-of-type {
+  @apply text-gray-500;
+}
+#actorList--page1:checked ~ .actorList--page1 {
+  @apply block;
+}
+#actorList--page2:checked ~ .actorList--page2 {
+  @apply block;
+}
+#actorList--page3:checked ~ .actorList--page3 {
+  @apply block;
+}
+/* 主演--头像左右分页器 */
+.actorList--page > label {
+  @apply absolute text-gray-400 transition opacity-0 cursor-pointer top-2 hover:opacity-100;
+}
+.actorList--page > label:first-child {
+  @apply -left-5;
+}
+.actorList--page > label:last-child {
+  @apply -right-5;
+}
+/* 主演--头像内容tab */
+#actorList--page1__tab1:checked
+  ~ ul
+  > li
+  > label[for="actorList--page1__tab1"] {
+  @apply border-opacity-100 opacity-100;
+}
+#actorList--page1__tab2:checked
+  ~ ul
+  > li
+  > label[for="actorList--page1__tab2"] {
+  @apply border-opacity-100 opacity-100;
+}
+#actorList--page1__tab3:checked
+  ~ ul
+  > li
+  > label[for="actorList--page1__tab3"] {
+  @apply border-opacity-100 opacity-100;
+}
+#actorList--page1__tab4:checked
+  ~ ul
+  > li
+  > label[for="actorList--page1__tab4"] {
+  @apply border-opacity-100 opacity-100;
+}
+#actorList--page1__tab5:checked
+  ~ ul
+  > li
+  > label[for="actorList--page1__tab5"] {
+  @apply border-opacity-100 opacity-100;
+}
+#actorList--page1__tab1:checked ~ .actorList--page1__tab1 {
+  @apply block;
+}
+#actorList--page1__tab2:checked ~ .actorList--page1__tab2 {
+  @apply block;
+}
+#actorList--page1__tab3:checked ~ .actorList--page1__tab3 {
+  @apply block;
+}
+#actorList--page1__tab4:checked ~ .actorList--page1__tab4 {
+  @apply block;
+}
+#actorList--page1__tab5:checked ~ .actorList--page1__tab5 {
+  @apply block;
+}
+/* 主演--头像内容--换行 */
+.actorList--page p {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+/* 主演--头像1内容--page*/
+#actorList--page1__tab1__page1:checked ~ .actorList--page1__tab1__page1 {
+  @apply block;
+}
+#actorList--page1__tab1__page2:checked ~ .actorList--page1__tab1__page2 {
+  @apply block;
+}
+#actorList--page1__tab1__page3:checked ~ .actorList--page1__tab1__page3 {
+  @apply block;
+}
+/* 主演--头像1内容--page左右分页*/
+.actorList--page1__tab1 label {
+  @apply absolute text-gray-400 transition opacity-0 cursor-pointer top-16 hover:opacity-100;
+}
+.actorList--page1__tab1 label:first-child {
+  @apply -left-5;
+}
+.actorList--page1__tab1 label:last-child {
+  @apply -right-5;
+}
+/* 主演--头像2内容--page*/
+#actorList--page1__tab2__page1:checked ~ .actorList--page1__tab2__page1 {
+  @apply block;
+}
+#actorList--page1__tab2__page2:checked ~ .actorList--page1__tab2__page2 {
+  @apply block;
+}
+#actorList--page1__tab2__page3:checked ~ .actorList--page1__tab2__page3 {
+  @apply block;
+}
+/* 主演--头像2内容--page左右分页*/
+.actorList--page1__tab2 label {
+  @apply absolute text-gray-400 transition opacity-0 cursor-pointer top-16 hover:opacity-100;
+}
+.actorList--page1__tab2 label:first-child {
+  @apply -left-5;
+}
+.actorList--page1__tab2 label:last-child {
+  @apply -right-5;
+}
+/* 为你推荐 */
+.recommend > h3 > a > svg {
+  transition: all 1s;
+}
+.recommend > h3 > a:hover > svg {
+  transform: rotate(-360deg);
+}
+.recommend > h3 > a:hover > span {
+  @apply text-red-500;
+}
+/* 白色文字背景渐变 */
+.recommend > ul > li > div:first-child > div:last-child {
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.3) 25.5%,
+    rgba(0, 0, 0, 0.08) 70%,
+    rgba(0, 0, 0, 0)
+  );
+}
+.recommend > ul > li > div:first-child:hover ~ div {
+  @apply block;
+}
+.recommend > ul > li > div:first-child ~ div:hover {
+  @apply block;
+}
+/* 右部分--视频列表 */
+.hotMovie > li,
+.vipMovie > li {
+  @apply flex py-2;
+}
+.hotMovie > li > a,
+.vipMovie > li > a {
+  @apply relative flex-shrink-0 block w-36;
+}
+.hotMovie > li > a:hover,
+.vipMovie > li > a:hover {
+  @apply transition-all shadow-xl;
+}
+.hotMovie > li > a:hover > img,
+.vipMovie > li > a:hover > img {
+  filter: brightness(150%);
+  @apply transition-all;
+}
+.hotMovie > li > a > img,
+.vipMovie > li > a > img {
+  @apply w-full rounded;
+}
+.hotMovie > li > a > div:first-of-type {
+  @apply absolute top-0 left-0 flex items-center justify-center px-1 py-0.5 bg-gray-400 rounded;
+}
+.hotMovie > li > a > div:last-of-type {
+  @apply absolute bottom-0 w-full rounded;
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.3) 25.5%,
+    rgba(0, 0, 0, 0.08) 70%,
+    rgba(0, 0, 0, 0)
+  );
+}
+.hotMovie > li > a > div:last-of-type > span {
+  @apply block px-2 py-1;
+}
+.hotMovie > li > div,
+.vipMovie > li > div {
+  @apply px-2 py-1 text-gray-900;
+}
+.hotMovie > li > div > a {
+  @apply text-sm;
+}
+.hotMovie > li > div:hover > a,
+.vipMovie > li > div:hover > a {
+  @apply text-red-500;
+}
+.hotMovie > li > div:hover > p {
+  @apply text-gray-900;
+}
+.hotMovie > li > div > p {
+  @apply my-1 overflow-hidden text-gray-400;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+.hotMovie > li > div > div {
+  @apply flex items-center pt-2 text-gray-400;
+}
+.hotMovie > li > div:hover > div {
+  @apply text-gray-900;
+}
+/* 深度解读 */
+.p-hidden-4 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+}

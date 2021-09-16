@@ -1,0 +1,19 @@
+.footer__content a {
+  display: inline-block;
+  padding-right: 1rem;
+  font-size: 0.875rem;
+}
+footer a {
+  font-size: 0.875rem;
+}
+footer a:hover {
+  color: #ff5c38;
+}
+.footer__foot li {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+body,
+footer {
+  min-width: 1280px;
+}

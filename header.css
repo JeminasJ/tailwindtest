@@ -1,0 +1,34 @@
+body,
+header {
+  min-width: 1280px;
+}
+header {
+  backdrop-filter: blur(2px);
+}
+.bgOrange {
+  background-color: #ff5c38;
+}
+
+.textOrange {
+  color: #ff5c38;
+}
+.header__search__li:hover {
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
+.header__search__li:hover > div {
+  display: flex;
+}
+.header__arrow {
+  top: -15px;
+}
+.header__menu__user__bg {
+  background: url(http://vm.gtimg.cn/tencentvideo/vstyle/web/v6/style/img/common/site_head/mod_pop_user/pop_user_bg.png)
+    no-repeat;
+}
+.header__menu:hover ~ div {
+  display: block;
+}
+.header__menu__hovered:hover {
+  display: block;
+}
